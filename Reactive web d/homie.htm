@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Find Your Home</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #e0f7fa, #e1bee7);
+      color: #2c2c2c;
+    }
+
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      background-color: #ffffffcc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    nav.scrolled {
+      background-color: #7b1fa2cc;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #7b1fa2;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #4a148c;
+      font-weight: 500;
+      padding: 0.3rem 0.6rem;
+      transition: background-color 0.3s, color 0.3s;
+      border-radius: 4px;
+    }
+
+    .nav-links a:hover {
+      color: white;
+      background-color: #4a148c;
+    }
+
+    .hero {
+      margin-top: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 3rem 5%;
+    }
+
+    .hero-text {
+      max-width: 50%;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      color: #6a1b9a;
+      margin-bottom: 1rem;
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+      color: #424242;
+      margin-bottom: 2rem;
+    }
+
+    .search-box {
+      background: #ffffff;
+      display: flex;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .search-box select,
+    .search-box input {
+      padding: 0.7rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    .search-box button {
+      background-color: #8e24aa;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.2rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .hero-image img {
+      max-width: 450px;
+      border-radius: 15px;
+    }
+
+    .section {
+      padding: 4rem 5%;
+      background-color: #fff;
+    }
+
+    .section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      color: #6a1b9a;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: #f8f4fb;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      color: #7b1fa2;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <nav id="navbar">
+    <div class="logo">🏠 HomeHues</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Rent</a></li>
+      <li><a href="#">Sell</a></li>
+      <li><a href="#">Buy</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Login</a></li>
+      <li><a href="#" style="background:#8e24aa; padding: 0.4rem 0.8rem; color:#fff; border-radius:6px">Get Started</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Find a place where you can be yourself.</h1>
+      <p>If you're looking for a place where you can be yourself, keep searching until you find one that feels like home.</p>
+      <div class="search-box">
+        <select>
+          <option>Buy</option>
+          <option>Rent</option>
+        </select>
+        <select>
+          <option>Any</option>
+          <option>Apartment</option>
+          <option>House</option>
+        </select>
+        <input type="text" placeholder="Street, City, Zip...">
+        <button>Search</button>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="house">
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Featured Listings</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Luxury Villa</h3>
+        <p>Located in the heart of the city, this villa offers modern comfort with traditional elegance.</p>
+      </div>
+      <div class="card">
+        <h3>Urban Apartment</h3>
+        <p>A sleek, modern apartment with all amenities, perfect for young professionals and couples.</p>
+      </div>
+      <div class="card">
+        <h3>Cozy Cottage</h3>
+        <p>Surrounded by nature, this is your perfect weekend getaway from city hustle.</p>
+      </div>
+    </div>
+  </section>
+
+<script src="lamar.js"></script>
+</body>
+</html>
